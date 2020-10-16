@@ -3,12 +3,12 @@
  * @brief
  */
 
-#include "MKE06Z4.h"
+#include "LPC55S16.h"
 #include "systick.h"
 
 static struct {
   i_tiny_time_source_t interface;
-  volatile tiny_time_source_ticks_t ticks;
+  volatile unsigned ticks;
 } self;
 
 void SysTick_Handler(void)
@@ -18,17 +18,7 @@ void SysTick_Handler(void)
 
 static tiny_time_source_ticks_t ticks(i_tiny_time_source_t* _self)
 {
-  (void)_self;
-
-  tiny_time_source_ticks_t ticks1;
-  tiny_time_source_ticks_t ticks2;
-
-  do {
-    ticks1 = self.ticks;
-    ticks2 = self.ticks;
-  } while(ticks1 != ticks2);
-
-  return ticks1;
+  return (tiny_time_source_ticks_t)self.ticks;
 }
 
 static const i_tiny_time_source_api_t api = { ticks };

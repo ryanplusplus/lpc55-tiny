@@ -1,20 +1,19 @@
 /*
 ** ###################################################################
-**     Processors:          MKE06Z128VLD4
-**                          MKE06Z128VLH4
-**                          MKE06Z128VLK4
-**                          MKE06Z128VQH4
+**     Processors:          LPC55S16JBD100
+**                          LPC55S16JBD64
+**                          LPC55S16JEV98
 **
 **     Compiler:            GNU C Compiler
-**     Reference manual:    MKE06P80M48SF0RM Rev 4
-**     Version:             rev. 1.0, 2017-05-19
-**     Build:               b190916
+**     Reference manual:    LPC55S1x/LPC551x User manual Rev.0.6  15 November 2019
+**     Version:             rev. 1.1, 2019-12-03
+**     Build:               b200221
 **
 **     Abstract:
 **         Linker file for the GNU C Compiler
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2019 NXP
+**     Copyright 2016-2020 NXP
 **     All rights reserved.
 **
 **     SPDX-License-Identifier: BSD-3-Clause
@@ -28,16 +27,17 @@
 /* Entry Point */
 ENTRY(Reset_Handler)
 
-HEAP_SIZE  = DEFINED(__heap_size__)  ? __heap_size__  : 0x0000;
-STACK_SIZE = DEFINED(__stack_size__) ? __stack_size__ : 0x0400;
+HEAP_SIZE  = DEFINED(__heap_size__)  ? __heap_size__  : 0x0400;
+STACK_SIZE = DEFINED(__stack_size__) ? __stack_size__ : 0x0800;
 
 /* Specify the memory areas */
 MEMORY
 {
   m_interrupts          (RX)  : ORIGIN = 0x00000000, LENGTH = 0x00000200
-  m_flash_config        (RX)  : ORIGIN = 0x00000400, LENGTH = 0x00000010
-  m_text                (RX)  : ORIGIN = 0x00000410, LENGTH = 0x0001FBF0
-  m_data                (RW)  : ORIGIN = 0x1FFFF000, LENGTH = 0x00004000
+  m_text                (RX)  : ORIGIN = 0x00000200, LENGTH = 0x00037E00
+  m_data                (RW)  : ORIGIN = 0x20000000, LENGTH = 0x00010000
+  m_sramx               (RW)  : ORIGIN = 0x04000000, LENGTH = 0x00004000
+  m_usb_sram            (RW)  : ORIGIN = 0x20010000, LENGTH = 0x00004000
 }
 
 /* Define output sections */
@@ -50,13 +50,6 @@ SECTIONS
     KEEP(*(.isr_vector))     /* Startup code */
     . = ALIGN(4);
   } > m_interrupts
-
-  .flash_config :
-  {
-    . = ALIGN(4);
-    KEEP(*(.FlashConfig))    /* Flash Configuration Field (FCF) */
-    . = ALIGN(4);
-  } > m_flash_config
 
   /* The program code and other data goes into internal flash */
   .text :
@@ -147,21 +140,12 @@ SECTIONS
   __etext = .;    /* define a global symbol at end of code */
   __DATA_ROM = .; /* Symbol is used by startup for data initialization */
 
-  /* reserve MTB memory at the beginning of m_data */
-  .mtb : /* MTB buffer address as defined by the hardware */
-  {
-    . = ALIGN(8);
-    _mtb_start = .;
-    KEEP(*(.mtb_buf)) /* need to KEEP Micro Trace Buffer as not referenced by application */
-    . = ALIGN(8);
-    _mtb_end = .;
-  } > m_data
-
   .data : AT(__DATA_ROM)
   {
     . = ALIGN(4);
     __DATA_RAM = .;
     __data_start__ = .;      /* create a global symbol at data start */
+    *(.ramfunc*)             /* for functions in ram */
     *(.data)                 /* .data sections */
     *(.data*)                /* .data* sections */
     KEEP(*(.jcr*))
@@ -204,6 +188,17 @@ SECTIONS
     . = ALIGN(8);
     . += STACK_SIZE;
   } > m_data
+
+  m_usb_bdt (NOLOAD) :
+  {
+    . = ALIGN(512);
+    *(m_usb_bdt)
+  } > m_usb_sram
+
+  m_usb_global (NOLOAD) :
+  {
+    *(m_usb_global)
+  } > m_usb_sram
 
   /* Initializes stack on the end of block */
   __StackTop   = ORIGIN(m_data) + LENGTH(m_data);

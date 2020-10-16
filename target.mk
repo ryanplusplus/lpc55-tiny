@@ -1,20 +1,19 @@
 TARGET = tiny
 BUILD_DIR ?= ./build
 
-CPU := cortex-m0
-ARCH := armv6-m
 OPENOCD_CFG := openocd
 LINKER_CFG := linker.ld
 
 DEFINES := \
-  CPU_MKE06Z128VLK4 \
+  CPU_LPC55S16JBD100 \
   __NO_SYSTEM_INIT \
   __STARTUP_CLEAR_BSS \
+  __START=main \
 
 SRC_FILES := \
 
 SRC_DIRS := \
-  lib/nxp/MKE06Z4 \
+  lib/nxp/LPC55S16 \
   src \
   src/hardware \
 

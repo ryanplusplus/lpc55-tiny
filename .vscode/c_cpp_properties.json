@@ -1,13 +1,13 @@
 {
   "configurations": [
     {
-      "name": "FRDM-KE06Z",
+      "name": "LPC55S16",
       "defines": [
-        "CPU_MKE06Z128VLK4"
+        "CPU_LPC55S16JBD100"
       ],
       "includePath": [
         "${workspaceFolder}/lib/CMSIS/Include",
-        "${workspaceFolder}/lib/nxp/MKE06Z4",
+        "${workspaceFolder}/lib/nxp/LPC55S16",
         "${workspaceFolder}/lib/tiny/include",
         "${workspaceFolder}/lib/tiny/include/hal",
         "${workspaceFolder}/src",

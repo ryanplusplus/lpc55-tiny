@@ -1,9 +1,9 @@
-# frdm-ke06z-tiny
-Sample project using [`tiny`](https://github.com/ryanplusplus/tiny) and [FRDM-KE06Z](https://www.nxp.com/design/development-boards/freedom-development-boards/mcu-boards/freedom-development-platform-for-kinetis-ke06-mcus:FRDM-KE06Z).
+# lpc55-tiny
+Sample project using [`tiny`](https://github.com/ryanplusplus/tiny) and [LPCXpresso55S16](https://www.nxp.com/design/development-boards/lpcxpresso-boards/lpcxpresso55s16-development-board:LPC55S16-EVK).
 
 ## Setup
 - Install `gcc-arm-none-eabi`
-- Install [`openocd`](https://sourceforge.net/p/openocd/code/ci/master/tree/)
+- Install [`J-Link`](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack)
 
 ## Use
 ### Compile
@@ -27,5 +27,6 @@ make -f <target>.mk upload
 ```
 
 ## Resources
-- [FRDM-KE06Z User's Guide](https://www.nxp.com/webapp/Download?colCode=FRDMKE06UG)
-- [KE06 Reference Manual](https://www.nxp.com/files-static/microcontrollers/doc/ref_manual/MKE06P80M48SF0RM.pdf)
+- [LPCXpresso55S16 User's Guide](https://www.nxp.com/docs/en/user-guide/UMLPCXPRESSO55S16.pdf)
+- [LPC55S1x Datasheet](https://www.nxp.com/docs/en/nxp/data-sheets/LPC55S1x_PDS.pdf)
+- [LPC55S1x Reference Manual](https://cache.nxp.com/secured/assets/documents/en/nxp/user-guides/UM11295.pdf?__gda__=1602814947_a1a9c409ff7ad0b353bffae742cf1662&fileExt=.pdf)
