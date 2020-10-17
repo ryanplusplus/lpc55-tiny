@@ -80,7 +80,7 @@ erase:
 $(BUILD_DIR)/$(TARGET).elf: $(OBJS) $(BUILD_DIR)/$(TARGET).lib
 	@echo Linking $(notdir $@)...
 	@$(MKDIR_P) $(dir $@)
-	@$(LD) $(OBJS) -mcpu=$(CPU) $(CPPFLAGS) -mthumb --specs=nano.specs --specs=nosys.specs -nostartfiles -Wl,-Og -Wl,--gc-sections -Wl,--start-group $(BUILD_DIR)/$(TARGET).lib -Wl,--end-group -o $@ -T $(LINKER_CFG) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map
+	@$(LD) $(OBJS) -mcpu=$(CPU) $(CPPFLAGS) -mthumb --specs=nano.specs --specs=nosys.specs -nostartfiles -Wl,-Og -Wl,--gc-sections -Wl,--start-group $(BUILD_DIR)/$(TARGET).lib $(LIBS) -Wl,--end-group -o $@ -T $(LINKER_CFG) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map
 
 $(BUILD_DIR)/$(TARGET).hex: $(BUILD_DIR)/$(TARGET).elf
 	@echo Creating $(notdir $@)...

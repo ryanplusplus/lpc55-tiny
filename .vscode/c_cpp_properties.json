@@ -3,11 +3,16 @@
     {
       "name": "LPC55S16",
       "defines": [
-        "CPU_LPC55S16JBD100"
+        "CPU_LPC55S16JBD100",
+        "NDEBUG",
+        "__NO_SYSTEM_INIT",
+        "__STARTUP_CLEAR_BSS",
+        "__START=main"
       ],
       "includePath": [
         "${workspaceFolder}/lib/CMSIS/Include",
         "${workspaceFolder}/lib/nxp/LPC55S16",
+        "${workspaceFolder}/lib/nxp/LPC55S16/drivers",
         "${workspaceFolder}/lib/tiny/include",
         "${workspaceFolder}/lib/tiny/include/hal",
         "${workspaceFolder}/src",
@@ -15,8 +20,9 @@
         "${workspaceFolder}/src/hardware"
       ],
       "intelliSenseMode": "gcc-arm",
-      "cStandard": "c11",
-      "cppStandard": "c++17"
+      "cStandard": "c18",
+      "cppStandard": "c++17",
+      "compilerPath": "arm-none-eabi-gcc"
     }
   ],
   "version": 4

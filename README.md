@@ -29,4 +29,4 @@ make -f <target>.mk upload
 ## Resources
 - [LPCXpresso55S16 User's Guide](https://www.nxp.com/docs/en/user-guide/UMLPCXPRESSO55S16.pdf)
 - [LPC55S1x Datasheet](https://www.nxp.com/docs/en/nxp/data-sheets/LPC55S1x_PDS.pdf)
-- [LPC55S1x Reference Manual](https://cache.nxp.com/secured/assets/documents/en/nxp/user-guides/UM11295.pdf?__gda__=1602814947_a1a9c409ff7ad0b353bffae742cf1662&fileExt=.pdf)
+- [LPC55S1x Reference Manual](https://www.mouser.com/pdfDocs/UM11295.pdf)

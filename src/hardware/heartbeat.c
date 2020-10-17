@@ -5,8 +5,8 @@
 
 #include <stddef.h>
 #include <stdbool.h>
-#include "LPC55S16.h"
 #include "heartbeat.h"
+#include "fsl_gpio.h"
 
 enum {
   port = 1,
@@ -22,12 +22,12 @@ static struct {
 static void blink(tiny_timer_group_t* group, void* context)
 {
   (void)context;
-  GPIO->NOT[port] = (1 << pin);
+  (void)group;
+  GPIO_PortToggle(GPIO, port, 1 << pin);
 }
 
 void heartbeat_init(tiny_timer_group_t* timer_group)
 {
-  GPIO->DIR[port] |= (1 << pin);
-
+  GPIO_PinInit(GPIO, port, pin, &(gpio_pin_config_t){ kGPIO_DigitalOutput, 0 });
   tiny_timer_start_periodic(timer_group, &self.timer, half_period_in_msec, blink, NULL);
 }

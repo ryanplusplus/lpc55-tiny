@@ -11,11 +11,13 @@ DEFINES := \
   __NO_SYSTEM_INIT \
   __STARTUP_CLEAR_BSS \
   __START=main \
+  NDEBUG \
 
 SRC_FILES := \
 
 SRC_DIRS := \
   lib/nxp/LPC55S16 \
+  lib/nxp/LPC55S16/drivers \
   src \
   src/hardware \
 
@@ -28,6 +30,9 @@ INC_DIRS := \
   lib/CMSIS/Include \
   lib/tiny/include \
   lib/tiny/include/hal \
+
+LIBS := \
+  lib/nxp/LPC55S16/gcc/libpower_hardabi_s.a
 
 include target-worker.mk
 

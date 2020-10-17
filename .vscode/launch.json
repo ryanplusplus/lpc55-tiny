@@ -11,9 +11,11 @@
       "request": "launch",
       "type": "cortex-debug",
       "servertype": "jlink",
+      "interface": "swd",
+      "runToMain": true,
       "svdFile": "${workspaceFolder}/svd/lpc55s16.svd",
       "device": "LPC55S16",
-      "preLaunchTask": "target-debug-deps"
+      "preLaunchTask": "target-debug-deps",
     }
   ]
 }
