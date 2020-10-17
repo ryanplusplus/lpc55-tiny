@@ -1,9 +1,9 @@
 /* --------------------------------------------------------------------------*/
-/* @file:    startup_LPC55S16.s                                                */
+/* @file:    startup_LPC55S16.s                                              */
 /* @purpose: CMSIS Cortex-M33 Core Device Startup File                       */
-/*           LPC55S16                                                          */
-/* @version: 1.1                                                      */
-/* @date:    2019-12-3                                                         */
+/*           LPC55S16                                                        */
+/* @version: 1.1                                                             */
+/* @date:    2019-12-3                                                       */
 /* --------------------------------------------------------------------------*/
 /*                                                                           */
 /* Copyright 1997-2016 Freescale Semiconductor, Inc.                         */

@@ -3,7 +3,7 @@ Sample project using [`tiny`](https://github.com/ryanplusplus/tiny) and [LPCXpre
 
 ## Setup
 - Install `gcc-arm-none-eabi`
-- Install [`J-Link`](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack)
+- Install [J-Link](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack)
 
 ## Use
 ### Compile
