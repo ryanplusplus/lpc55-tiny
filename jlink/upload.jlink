@@ -1,0 +1,4 @@
+r
+loadfile build/tiny.hex
+r
+exit

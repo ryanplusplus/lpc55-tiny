@@ -8,36 +8,26 @@
 #include "LPC55S16.h"
 #include "heartbeat.h"
 
-// #define port GPIOB
-// #define pin 21
-
 enum {
+  port = 1,
+  pin = 6,
+
   half_period_in_msec = 500,
 };
 
 static struct {
   tiny_timer_t timer;
-  bool state;
 } self;
 
 static void blink(tiny_timer_group_t* group, void* context)
 {
   (void)context;
-
-  // if(self.state) {
-  //   port->PCOR = (1 << pin);
-  // }
-  // else {
-  //   port->PSOR = (1 << pin);
-  // }
-
-  self.state = !self.state;
+  GPIO->NOT[port] = (1 << pin);
 }
 
 void heartbeat_init(tiny_timer_group_t* timer_group)
 {
-  // port->PDDR |= (1 << pin);
-  // port->PIDR |= (1 << pin);
+  GPIO->DIR[port] |= (1 << pin);
 
   tiny_timer_start_periodic(timer_group, &self.timer, half_period_in_msec, blink, NULL);
 }

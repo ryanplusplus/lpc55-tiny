@@ -71,11 +71,11 @@ debug-deps: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/openocd.cfg
 
 .PHONY: upload
 upload: $(BUILD_DIR)/$(TARGET).hex
-	@openocd -f $(OPENOCD_CFG)/upload.cfg
+	@JLinkExe -device $(JLINK_DEVICE) -if SWD -autoconnect 1 -speed 4000 -CommandFile jlink/upload.jlink
 
 .PHONY: erase
 erase:
-	@openocd -f $(OPENOCD_CFG)/erase.cfg
+	@JLinkExe -device $(JLINK_DEVICE) -if SWD -autoconnect 1 -speed 4000 -CommandFile jlink/upload.jlink
 
 $(BUILD_DIR)/$(TARGET).elf: $(OBJS) $(BUILD_DIR)/$(TARGET).lib
 	@echo Linking $(notdir $@)...

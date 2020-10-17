@@ -1,6 +1,8 @@
 TARGET = tiny
 BUILD_DIR ?= ./build
 
+JLINK_DEVICE := LPC55S16
+
 OPENOCD_CFG := openocd
 LINKER_CFG := linker.ld
 
