@@ -1,0 +1,24 @@
+Scanning dependencies of target led_blinky.elf
+[  9%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/boards/lpcxpresso55s16/demo_apps/led_blinky/pin_mux.c.obj
+[  9%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/boards/lpcxpresso55s16/demo_apps/led_blinky/board.c.obj
+[ 18%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/boards/lpcxpresso55s16/demo_apps/led_blinky/led_blinky.c.obj
+[ 18%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/boards/lpcxpresso55s16/demo_apps/led_blinky/clock_config.c.obj
+[ 22%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/drivers/fsl_gpio.c.obj
+[ 27%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/drivers/fsl_common.c.obj
+[ 31%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/drivers/fsl_power.c.obj
+[ 36%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/drivers/fsl_clock.c.obj
+[ 40%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/system_LPC55S16.c.obj
+[ 45%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/drivers/fsl_reset.c.obj
+[ 50%] Building ASM object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/gcc/startup_LPC55S16.S.obj
+[ 54%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/drivers/fsl_usart.c.obj
+[ 59%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/drivers/fsl_flexcomm.c.obj
+[ 63%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/utilities/debug_console/fsl_debug_console.c.obj
+[ 68%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/utilities/fsl_assert.c.obj
+[ 72%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/utilities/str/fsl_str.c.obj
+[ 77%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/components/uart/usart_adapter.c.obj
+[ 81%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/components/serial_manager/serial_manager.c.obj
+[ 86%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/components/lists/generic_list.c.obj
+[ 90%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/components/serial_manager/serial_port_uart.c.obj
+[ 95%] Building C object CMakeFiles/led_blinky.elf.dir/home/ryan/git/lpc55-tiny/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/utilities/fsl_sbrk.c.obj
+[100%] Linking C executable debug/led_blinky.elf
+[100%] Built target led_blinky.elf

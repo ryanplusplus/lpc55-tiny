@@ -10,17 +10,16 @@
         "__START=main"
       ],
       "includePath": [
-        "${workspaceFolder}/lib/CMSIS/Include",
-        "${workspaceFolder}/lib/nxp/LPC55S16",
-        "${workspaceFolder}/lib/nxp/LPC55S16/drivers",
+        "${workspaceFolder}/lib/nxp/SDK_2.8.2_LPCXpresso55S16/CMSIS/Include",
+        "${workspaceFolder}/lib/nxp/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16",
+        "${workspaceFolder}/lib/nxp/SDK_2.8.2_LPCXpresso55S16/devices/LPC55S16/drivers",
         "${workspaceFolder}/lib/tiny/include",
         "${workspaceFolder}/lib/tiny/include/hal",
         "${workspaceFolder}/src",
-        "${workspaceFolder}/src/app",
         "${workspaceFolder}/src/hardware"
       ],
       "intelliSenseMode": "gcc-arm",
-      "cStandard": "c18",
+      "cStandard": "c17",
       "cppStandard": "c++17",
       "compilerPath": "arm-none-eabi-gcc"
     }

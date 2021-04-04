@@ -7,13 +7,13 @@
     {
       "name": "target (jlink)",
       "cwd": "${workspaceRoot}",
-      "executable": "${workspaceFolder}/build/tiny.elf",
+      "executable": "${workspaceFolder}/build/target.elf",
       "request": "launch",
       "type": "cortex-debug",
       "servertype": "jlink",
       "interface": "swd",
       "runToMain": true,
-      "svdFile": "${workspaceFolder}/svd/lpc55s16.svd",
+      "svdFile": "${workspaceFolder}/build/target.svd",
       "device": "LPC55S16",
       "preLaunchTask": "target-debug-deps",
     }

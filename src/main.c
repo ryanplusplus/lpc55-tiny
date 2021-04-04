@@ -12,7 +12,7 @@
 
 static tiny_timer_group_t timer_group;
 
-void main(void)
+int main(void)
 {
   interrupts_disable();
   {

@@ -18,6 +18,7 @@ void SysTick_Handler(void)
 
 static tiny_time_source_ticks_t ticks(i_tiny_time_source_t* _self)
 {
+  (void)_self;
   return (tiny_time_source_ticks_t)self.ticks;
 }
 
