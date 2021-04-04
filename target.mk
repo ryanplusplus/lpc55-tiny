@@ -10,7 +10,8 @@ DEVICE := LPC55S16
 SDK := SDK_2.8.2_LPCXpresso55S16
 SVD := lib/nxp/$(SDK)/devices/$(DEVICE)/$(DEVICE).xml
 
-DEBUG_ADAPTER ?= other
+DEBUG_ADAPTER ?= jlink
+JLINK_DEVICE := $(DEVICE)
 OPENOCD_CFG_DIR := openocd
 BLACK_MAGIC_PORT ?= /dev/ttyACM0
 BLACK_MAGIC_POWER_TARGET ?= N
@@ -43,13 +44,13 @@ include lib_tiny.mk
 
 include tools/tools.mk
 
-.PHONY: upload
-upload: $(BUILD_DIR)/$(TARGET).hex
-	@JLinkExe -device $(DEVICE) -if SWD -autoconnect 1 -speed 4000 -CommandFile jlink/upload.jlink
+# .PHONY: upload
+# upload: $(BUILD_DIR)/$(TARGET).hex
+# 	@JLinkExe -device $(DEVICE) -if SWD -autoconnect 1 -speed 4000 -CommandFile jlink/upload.jlink
 
-.PHONY: erase
-erase:
-	@JLinkExe -device $(DEVICE) -if SWD -autoconnect 1 -speed 4000 -CommandFile jlink/upload.jlink
+# .PHONY: erase
+# erase:
+# 	@JLinkExe -device $(DEVICE) -if SWD -autoconnect 1 -speed 4000 -CommandFile jlink/erase.jlink
 
 .PHONY: watch
 watch:
