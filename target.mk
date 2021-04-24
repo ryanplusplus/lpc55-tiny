@@ -28,6 +28,8 @@ include tools/defaults.mk
 CPPFLAGS += \
   -mfloat-abi=hard \
   -mfpu=fpv5-sp-d16 \
+  -flto \
+  -fwhole-program \
 
 INC_DIRS := \
   lib/nxp/$(SDK)/CMSIS/Include \
