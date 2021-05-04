@@ -2,7 +2,6 @@ TARGET = target
 BUILD_DIR ?= ./build
 
 CPU := cortex-m33
-ARCH := armv8-m.main+dsp
 LINKER_CFG := linker.ld
 
 DEVICE := LPC55S16
