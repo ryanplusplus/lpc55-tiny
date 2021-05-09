@@ -45,14 +45,6 @@ include lib_tiny.mk
 
 include tools/tools.mk
 
-# .PHONY: upload
-# upload: $(BUILD_DIR)/$(TARGET).hex
-# 	@JLinkExe -device $(DEVICE) -if SWD -autoconnect 1 -speed 4000 -CommandFile jlink/upload.jlink
-
-# .PHONY: erase
-# erase:
-# 	@JLinkExe -device $(DEVICE) -if SWD -autoconnect 1 -speed 4000 -CommandFile jlink/erase.jlink
-
 .PHONY: watch
 watch:
 	@rerun "$(MAKE) --no-print-directory -f $(firstword $(MAKEFILE_LIST))"
