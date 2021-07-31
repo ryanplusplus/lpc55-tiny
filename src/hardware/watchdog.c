@@ -38,5 +38,5 @@ void watchdog_init(tiny_timer_group_t* timer_group)
   };
   WWDT_Init(WWDT, &config);
 
-  tiny_timer_start_periodic(timer_group, &self.timer, kick_period_msec, kick, NULL);
+  tiny_timer_start_periodic(timer_group, &self.timer, kick_period_msec, NULL, kick);
 }

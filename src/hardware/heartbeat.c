@@ -29,5 +29,5 @@ static void blink(tiny_timer_group_t* group, void* context)
 void heartbeat_init(tiny_timer_group_t* timer_group)
 {
   GPIO_PinInit(GPIO, port, pin, &(gpio_pin_config_t){ kGPIO_DigitalOutput, 0 });
-  tiny_timer_start_periodic(timer_group, &self.timer, half_period_in_msec, blink, NULL);
+  tiny_timer_start_periodic(timer_group, &self.timer, half_period_in_msec, NULL, blink);
 }
