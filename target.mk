@@ -25,6 +25,7 @@ DEFINES := \
 include tools/defaults.mk
 
 CPPFLAGS += \
+  -Wno-pedantic \
   -mfloat-abi=hard \
   -mfpu=fpv5-sp-d16 \
   -flto \
