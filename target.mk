@@ -2,7 +2,7 @@ TARGET = target
 BUILD_DIR ?= ./build
 
 CPU := cortex-m33
-LINKER_CFG := linker.ld
+LINKER_SCRIPT := linker.ld
 
 DEVICE := LPC55S16
 
