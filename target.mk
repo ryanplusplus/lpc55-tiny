@@ -46,8 +46,12 @@ SRC_DIRS := \
 include lib_fsl.mk
 include lib/tiny/lib_tiny.mk
 
-include tools/tools.mk
+.PHONY: all
+all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex
+	@$(SIZE) $<
 
 .PHONY: watch
 watch:
 	@rerun "$(MAKE) --no-print-directory -f $(firstword $(MAKEFILE_LIST))"
+
+include tools/tools.mk
