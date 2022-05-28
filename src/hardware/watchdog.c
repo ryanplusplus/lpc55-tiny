@@ -18,10 +18,9 @@ static struct {
   tiny_timer_t timer;
 } self;
 
-static void kick(tiny_timer_group_t* group, void* context)
+static void kick(void* context)
 {
   (void)context;
-  (void)group;
   WWDT_Refresh(WWDT);
 }
 
